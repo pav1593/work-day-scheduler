@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Work Day Scheduler</title>
+  </head>
+
+  <body>
+    <header class="jumbotron">
+      <h1 class="display-3">Work Day Scheduler</h1>
+      <p class="lead">A simple calendar app for scheduling your work day</p>
+      <p id="currentDay" class="lead"></p>
+    </header>
+    
+    <div class="container">
+      <!-- Timeblocks go here -->
+      
+       <!-- 9am  -->
+      <div class="input-group input-group-lg">
+        <div class="input-group-prepend">
+          <span class="input-group-text  rounded-0 hour" id="inputGroup-sizing-lg">9AM</span>
+        </div>
+        <input type="text" size="1" class="form-control text-align-top row past textarea" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" aria-describedby="button-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary saveBtn" type="button" id="button-addon2">✏️</button>
+        </div>
+      </div>
+
+        <!-- 10AM  -->
+        <div class="input-group input-group-lg">
+          <div class="input-group-prepend">
+            <span class="input-group-text rounded-0 hour" id="inputGroup-sizing-lg">10AM</span>
+          </div>
+          <input type="text" size="1" class="form-control row past textarea" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" aria-describedby="button-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary saveBtn" type="button" id="button-addon2">✏️</button>
+          </div>
+        </div>
+      
+  
+        <!-- 11AM  -->
+        <div class="input-group input-group-lg">
+          <div class="input-group-prepend">
+            <span class="input-group-text rounded-0 hour" id="inputGroup-sizing-lg">11AM</span>
+          </div>
+          <input type="text" size="1" class="form-control alight-top row past textarea" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" aria-describedby="button-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary saveBtn" type="button" id="button-addon2">✏️</button>
+          </div>
+        </div>      
+        
+        <!-- 12PM  -->
+        <div class="input-group input-group-lg">
+          <div class="input-group-prepend">
+            <span class="input-group-text rounded-0 hour" id="inputGroup-sizing-lg">12PM</span>
+          </div>
+          <input type="text" size="1" class="form-control row past textarea" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" aria-describedby="button-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary saveBtn" type="button" id="button-addon2">✏️</button>
+          </div>
+        </div>          
+        
+        <!-- 1PM  -->
+        <div class="input-group input-group-lg">
+          <div class="input-group-prepend">
+            <span class="input-group-text rounded-0 hour" id="inputGroup-sizing-lg">1PM</span>
+          </div>
+          <input type="text" size="1" class="form-control row past textarea" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" aria-describedby="button-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary saveBtn" type="button" id="button-addon2">✏️</button>
+          </div>
+        </div>     
+
+      <!-- 2PM  -->
+      <div class="input-group input-group-lg">
+      <div class="input-group-prepend">
+          <span class="input-group-text rounded-0 hour" id="inputGroup-sizing-lg">2PM</span>
+        </div>
+        <input type="text" size="1" class="form-control row past textarea" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" aria-describedby="button-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary saveBtn" type="button" id="button-addon2">✏️</button>
+        </div>
+      </div>     
+
+    <!-- 3PM  -->
+    <div class="input-group input-group-lg">
+    <div class="input-group-prepend">
+        <span class="input-group-text rounded-0 hour" id="inputGroup-sizing-lg">3PM</span>
+      </div>
+      <input type="text" size="1" class="form-control row past textarea" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" aria-describedby="button-addon2">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary saveBtn" type="button" id="button-addon2">✏️</button>
+      </div>
+    </div> 
+
+    <!-- 4PM  -->
+    <div class="input-group input-group-lg">
+      <div class="input-group-prepend">
+          <span class="input-group-text rounded-0 hour" id="inputGroup-sizing-lg">4PM</span>
+        </div>
+        <input type="text" size="1" class="form-control row past textarea" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" aria-describedby="button-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary saveBtn" type="button" id="button-addon2">✏️</button>
+        </div>
+      </div>     
+
+    <!-- 5PM  -->
+    <div class="input-group input-group-lg">
+    <div class="input-group-prepend">
+        <span class="input-group-text rounded-0 hour" id="inputGroup-sizing-lg">5PM</span>
+      </div>
+      <input type="text" size="1" class="form-control row past textarea" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" aria-describedby="button-addon2">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary saveBtn" type="button" id="button-addon2">✏️</button>
+      </div>
+    </div>          
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
