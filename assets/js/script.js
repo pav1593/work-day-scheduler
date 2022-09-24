@@ -1,24 +1,5 @@
 
 let timedateEl = $('#currentDay');
-let input9 = $('#input-9AM');
-let input10 = $('#input-10AM');
-let input11 = $('#input-11AM');
-let input12 = $('#input-12PM');
-let input13 = $('#input-1PM');
-let input14 = $('#input-2PM');
-let input15 = $('#input-3PM');
-let input16 = $('#input-4PM');
-let input17 = $('#input-5PM');
-
-let button9 = $('#b-9AM');
-let button10 = $('#b-10AM');
-let button11 = $('#b-11AM');
-let button12 = $('#b-12PM');
-let button13 = $('#b-1PM');
-let button14 = $('#b-2PM');
-let button15 = $('#b-3PM');
-let button16 = $('#b-4PM');
-let button17 = $('#b-5PM');
 
 
 var schedule = {
@@ -33,21 +14,25 @@ var schedule = {
     entry5PM: ""  
   };
 
+  // uses the moment 3rd party API to get and format the day/date display
 setInterval (function() {
     let timedate = moment().format("dddd, MMMM Do");
     $(timedateEl).text(timedate);
 },1000);
 
+//this function renders the color scheme for the time-blocks
 function loadCurrentTime() {
 
-//    let currentHour = moment().hour();
-   let currentHour = 12; //used for testing logic below for coloring timeblocks
+   let currentHour = moment().hour();
+//    let currentHour = 12; //used for testing logic below for coloring timeblocks outside of working hours
    
-
+    // if current time outside of 9-5pm then it shades all GRAY
    if (currentHour>17 || currentHour<9) {
         $('.container').children().addClass('past');
     } else {
         
+        // otherwise it shades the past hours in GRAY, PRESENT hour in RED and remaining hours in GREEN
+
         let tempTime="";
 
         for(let i=9;i<currentHour;i++) {
@@ -86,20 +71,20 @@ function loadCurrentTime() {
 
 }
 
-
+// function can be used to save defaults in the browser to display intially but is not required to use the app
 function saveDefaultSchedule() {
     localStorage.setItem("schedule", JSON.stringify(schedule));
 }
 
+// this function gets called by the event listener when one of the time entry buttons are pressed in order to save the new entry in that field
 function saveSchedule(event) {
 
     let item = event.target;
 
-//   $(item).parent().prev().val('testing');
+    // traverses the DOM from the button pressed to the INPUT form in order to grab the correct time entry input value and udpate the JSON stored locally
     let parentEl = $(item).parent().prev().attr('id');
     let entry = $(item).parent().prev().val().trim();
-    console.log(parentEl);
-    console.log(entry);
+
 
   switch (parentEl) {
 
@@ -142,7 +127,7 @@ function saveSchedule(event) {
   localStorage.setItem("schedule", JSON.stringify(schedule));
 }
 
-
+// this function recalls the JSON store locally, if any, and renders the values to the time slots on the schedule
 function renderSchedule() {
     let tempTime="";
     let tempEntry="";
@@ -163,13 +148,13 @@ function renderSchedule() {
     }
 }
 
-
+// listener for save button clicks to save the respective entry
 $('.container').on('click',saveSchedule);
 
+// main function kicks off the app by rendering the color schema and then rendering any store JSON values
 function main() {
     loadCurrentTime();
-    //saveDefaultSchedule();
+   // saveDefaultSchedule(); // funciton used for testing and loading default values
     renderSchedule();
 }
-
 main();
