@@ -21,6 +21,18 @@ let button16 = $('#b-4PM');
 let button17 = $('#b-5PM');
 
 
+var schedule = {
+    entry9AM: "",
+    entry10AM: "",
+    entry11AM: "Sample entry",
+    entry12PM: "",
+    entry1PM: "",
+    entry2PM: "Another sample entry",
+    entry3PM: "",
+    entry4PM: "",
+    entry5PM: ""  
+  };
+
 setInterval (function() {
     let timedate = moment().format("dddd, MMMM Do");
     $(timedateEl).text(timedate);
@@ -74,8 +86,54 @@ function loadCurrentTime() {
 
 }
 
+
+function saveDefaultSchedule() {
+    localStorage.setItem("schedule", JSON.stringify(schedule));
+}
+
+function saveSchedule(event) {
+    let item = event.target;
+
+  $(item).parent().prev().val('testing');
+  switch ($(item).parent().prev().attr('id')){
+
+    case 'input-9AM':
+            schedule.entry9AM=$(item).parent().prev().value;
+            break;
+
+
+  }
+    
+  
+}
+
+function renderSchedule() {
+    let tempTime="";
+    let tempEntry="";
+
+    let savedSchedule = JSON.parse(localStorage.getItem("schedule"));
+    if (savedSchedule !== null) {
+        
+        $('#input-9AM').val(savedSchedule.entry9AM);
+        $('#input-10AM').val(savedSchedule.entry10AM);
+        $('#input-11AM').val(savedSchedule.entry11AM);
+        $('#input-12PM').val(savedSchedule.entry12PM);
+        $('#input-1PM').val(savedSchedule.entry1PM);
+        $('#input-2PM').val(savedSchedule.entry2PM);
+        $('#input-3PM').val(savedSchedule.entry3PM);
+        $('#input-4PM').val(savedSchedule.entry4PM);
+        $('#input-5PM').val(savedSchedule.entry5PM);
+    
+    }
+}
+
+
+$('.container').on('click',saveSchedule);
+
 function main() {
     loadCurrentTime();
+    saveDefaultSchedule();
+    renderSchedule();
 }
 
 main();
