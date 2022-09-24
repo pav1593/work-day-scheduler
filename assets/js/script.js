@@ -92,20 +92,56 @@ function saveDefaultSchedule() {
 }
 
 function saveSchedule(event) {
+
     let item = event.target;
 
-  $(item).parent().prev().val('testing');
-  switch ($(item).parent().prev().attr('id')){
+//   $(item).parent().prev().val('testing');
+    let parentEl = $(item).parent().prev().attr('id');
+    let entry = $(item).parent().prev().val().trim();
+    console.log(parentEl);
+    console.log(entry);
+
+  switch (parentEl) {
 
     case 'input-9AM':
-            schedule.entry9AM=$(item).parent().prev().value;
-            break;
+        schedule.entry9AM=entry;
+        break;
+    case 'input-10AM':
+        schedule.entry10AM=entry;
+        break;           
 
+    case 'input-11AM':
+        schedule.entry11AM=entry;
+        break;     
+
+    case 'input-12PM':
+        schedule.entry12PM=entry;
+        break;     
+
+    case 'input-1PM':
+        schedule.entry1PM=entry;
+        break;     
+
+    case 'input-2PM':
+        schedule.entry2PM=entry;
+        break;     
+
+    case 'input-3PM':
+        schedule.entry3PM=entry;
+        break;     
+
+    case 'input-4PM':
+        schedule.entry4PM=entry;
+        break;     
+
+    case 'input-5PM':
+        schedule.entry5PM=entry;
+        break;     
 
   }
-    
-  
+  localStorage.setItem("schedule", JSON.stringify(schedule));
 }
+
 
 function renderSchedule() {
     let tempTime="";
@@ -132,7 +168,7 @@ $('.container').on('click',saveSchedule);
 
 function main() {
     loadCurrentTime();
-    saveDefaultSchedule();
+    //saveDefaultSchedule();
     renderSchedule();
 }
 
