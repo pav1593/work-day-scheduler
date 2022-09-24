@@ -1,7 +1,7 @@
-
+// grabs the date display element
 let timedateEl = $('#currentDay');
 
-
+// creates the storage object to store entries prefilled with some defaults for testing
 var schedule = {
     entry9AM: "",
     entry10AM: "",
