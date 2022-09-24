@@ -4,13 +4,14 @@ body {
   line-height: 1;
 }
 
-textarea {
+.textarea {
   background: transparent;
   border: none;
   resize: none;
   color: #000000;
   border-left: 1px solid black;
-  padding: 10px;
+  padding: 0px;
+  margin:0;
 }
 
 .jumbotron {
@@ -41,6 +42,8 @@ textarea {
   color: #000000;
   border: none;
   border-top: 1px dashed #000000;
+  padding:0;
+  margin:0;
  
 }
 
@@ -80,12 +83,27 @@ textarea {
 }  */
 
 .input-group .input-group-text {
-  width: 100px;
-
+  width: 120px;
+  padding:0;
+  margin:0;
 } 
 
 .input-group-lg>.custom-select, .input-group-lg>.form-control:not(textarea) {
   height: 100px;
-  font-size: smaller;
-  color: black
+    font-size: smaller;
+    color: black;
+    padding-top: 0;
+}
+
+.input-group-lg>.custom-select, .input-group-lg>.form-control:active,
+.input-group-lg>.custom-select, .input-group-lg>.form-control:focus,
+.input-group-lg>.custom-select, .input-group-lg>.form-control:focus:active  {
+  border:none;
+  box-shadow: none;
+  z-index: 1;
+}
+
+#inputGroup-sizing-lg {
+  font-size:15px;
+
 }
